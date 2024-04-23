@@ -14,10 +14,17 @@ spring:
     password: thisisTESTpw!#%&
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
+<<<<<<< HEAD
     open-in-view: false
     defer-datasource-initialization: true
     hibernate:
       ddl-auto: create
+=======
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: create
+    open-in-view: false
+>>>>>>> main
     show-sql: true
     properties:
       hibernate:
