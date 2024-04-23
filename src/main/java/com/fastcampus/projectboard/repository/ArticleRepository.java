@@ -4,11 +4,8 @@ import com.fastcampus.projectboard.domain.Article;
 import com.fastcampus.projectboard.domain.QArticle;
 import com.querydsl.core.types.dsl.DateTimeExpression;
 import com.querydsl.core.types.dsl.StringExpression;
-<<<<<<< HEAD
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-=======
->>>>>>> main
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 import org.springframework.data.querydsl.binding.QuerydslBinderCustomizer;
@@ -21,10 +18,7 @@ public interface ArticleRepository extends
         QuerydslPredicateExecutor<Article>,
         QuerydslBinderCustomizer<QArticle>
 {
-<<<<<<< HEAD
     Page<Article> findByTitle(String title, Pageable pageable);
-=======
->>>>>>> main
     @Override
     default void customize(QuerydslBindings bindings, QArticle root){
         bindings.excludeUnlistedProperties(true);
