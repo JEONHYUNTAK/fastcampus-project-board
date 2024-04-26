@@ -9,9 +9,6 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-/**
- * DTO for {@link com.fastcampus.projectboard.domain.Article}
- */
 public record ArticleWithCommentsDto(
         Long id,
         UserAccountDto userAccountDto,
