@@ -156,10 +156,12 @@ class ArticleServiceTest {
         // Given
         Long articleId = 1L;
         willDoNothing().given(articleRepository).deleteById(articleId);
+
         // When
+        sut.deleteArticle(1L);
 
         // Then
-
+        then(articleRepository).should().deleteById(articleId);
     }
 
     private UserAccount createUserAccount() {

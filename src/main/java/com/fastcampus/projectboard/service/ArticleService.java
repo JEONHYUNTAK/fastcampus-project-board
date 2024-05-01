@@ -1,16 +1,19 @@
 package com.fastcampus.projectboard.service;
 
+import com.fastcampus.projectboard.domain.Article;
 import com.fastcampus.projectboard.domain.type.SearchType;
 import com.fastcampus.projectboard.dto.ArticleDto;
 import com.fastcampus.projectboard.dto.ArticleWithCommentsDto;
 import com.fastcampus.projectboard.repository.ArticleRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+@Slf4j
 @RequiredArgsConstructor
 @Transactional
 @Service
@@ -43,12 +46,23 @@ public class ArticleService {
     }
 
     public void saveArticle(ArticleDto dto) {
+        articleRepository.save(dto.toEntity());
     }
 
     public void updateArticle(ArticleDto dto) {
+        try {
+            Article article = articleRepository.getReferenceById(dto.id());
+            if(dto.title()   != null) { article.setTitle(dto.title());     }
+            if(dto.content() != null) { article.setContent(dto.content()); }
+            if(dto.hashtag() != null) { article.setHashtag(dto.hashtag()); }
+            articleRepository.save(article);
+        }catch(EntityNotFoundException e){//lombok을 사용하여 log.warn 사용가능
+            log.warn("게시글 업데이트 실패. 게시글을 찾을 수 없습니다 - dto: {}", dto);
+        }
     }
 
     public void deleteArticle(long articleId) {
+        articleRepository.deleteById(articleId);
     }
 
 }
