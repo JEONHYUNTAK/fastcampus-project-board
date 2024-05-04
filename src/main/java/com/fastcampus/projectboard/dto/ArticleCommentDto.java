@@ -9,13 +9,13 @@ public record ArticleCommentDto(
         Long articleId,
         UserAccountDto userAccountDto,
         String content,
-        LocalDateTime created_At,
-        String created_By,
-        LocalDateTime modified_At,
-        String modified_By
+        LocalDateTime createdAt,
+        String createdBy,
+        LocalDateTime modifiedAt,
+        String modifiedBy
 ) {
-    public static ArticleCommentDto of(Long id, Long articleId, UserAccountDto userAccountDto, String content, LocalDateTime created_At, String created_By, LocalDateTime modified_At, String modified_By) {
-        return new ArticleCommentDto(id, articleId, userAccountDto, content, created_At, created_By, modified_At, modified_By);
+    public static ArticleCommentDto of(Long id, Long articleId, UserAccountDto userAccountDto, String content, LocalDateTime createdAt, String createdBy, LocalDateTime modifiedAt, String modifiedBy) {
+        return new ArticleCommentDto(id, articleId, userAccountDto, content, createdAt, createdBy, modifiedAt, modifiedBy);
     }
 
     public static ArticleCommentDto from(ArticleComment entity){
@@ -24,10 +24,10 @@ public record ArticleCommentDto(
                 entity.getArticle().getId(),
                 UserAccountDto.from(entity.getUserAccount()),
                 entity.getContent(),
-                entity.getCreated_At(),
-                entity.getCreated_By(),
-                entity.getModified_At(),
-                entity.getModified_By()
+                entity.getCreatedAt(),
+                entity.getCreatedBy(),
+                entity.getModifiedAt(),
+                entity.getModifiedBy()
         );
     }
 

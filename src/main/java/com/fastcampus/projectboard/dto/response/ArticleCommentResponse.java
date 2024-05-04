@@ -7,12 +7,12 @@ import java.time.LocalDateTime;
 public record ArticleCommentResponse(
         Long id,
         String content,
-        LocalDateTime created_At,
+        LocalDateTime createdAt,
         String email,
         String nickname
 ) {
-    public static ArticleCommentResponse of(Long id, String content, LocalDateTime created_At, String email, String nickname) {
-        return new ArticleCommentResponse(id, content, created_At, email, nickname);
+    public static ArticleCommentResponse of(Long id, String content, LocalDateTime createdAt, String email, String nickname) {
+        return new ArticleCommentResponse(id, content, createdAt, email, nickname);
     }
 
     public static ArticleCommentResponse from(ArticleCommentDto dto){
@@ -24,7 +24,7 @@ public record ArticleCommentResponse(
         return new ArticleCommentResponse(
                 dto.id(),
                 dto.content(),
-                dto.created_At(),
+                dto.createdAt(),
                 dto.userAccountDto().email(),
                 nickname
         );

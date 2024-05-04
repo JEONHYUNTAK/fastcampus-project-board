@@ -14,13 +14,13 @@ public record ArticleDto(
         String title,
         String content,
         String hashtag,
-        LocalDateTime created_At,
-        String created_By,
-        LocalDateTime modified_At,
-        String modified_By
+        LocalDateTime createdAt,
+        String createdBy,
+        LocalDateTime modifiedAt,
+        String modifiedBy
 ) {
-    public static ArticleDto of(Long id, UserAccountDto userAccountDto, String title, String content, String hashtag, LocalDateTime created_At, String created_By, LocalDateTime modified_At, String modified_By) {
-        return new ArticleDto(id, userAccountDto, title, content, hashtag, created_At, created_By, modified_At, modified_By);
+    public static ArticleDto of(Long id, UserAccountDto userAccountDto, String title, String content, String hashtag, LocalDateTime createdAt, String createdBy, LocalDateTime modifiedAt, String modifiedBy) {
+        return new ArticleDto(id, userAccountDto, title, content, hashtag, createdAt, createdBy, modifiedAt, modifiedBy);
     }
 
     public static ArticleDto from(Article entity) {
@@ -30,10 +30,10 @@ public record ArticleDto(
                 entity.getTitle(),
                 entity.getContent(),
                 entity.getHashtag(),
-                entity.getCreated_At(),
-                entity.getCreated_By(),
-                entity.getModified_At(),
-                entity.getModified_By()
+                entity.getCreatedAt(),
+                entity.getCreatedBy(),
+                entity.getModifiedAt(),
+                entity.getModifiedBy()
         );
     }
 
