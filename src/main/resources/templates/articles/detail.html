@@ -14,23 +14,26 @@
 
 <body>
 
-    <header id="header"></header>
+    <header id="header">
+        header 삽입부
+        <hr>
+    </header>
 
-    <main class="container">
-        <header class="py-5 text-center">
+    <main id="article-main" class="container">
+        <header id="article-header" class="py-5 text-center">
             <h1>첫번째 글</h1>
         </header>
         <div class="row g-5">
             <section class="col-md-5 col-lg-4 order-md-last">
                 <aside>
-                    <p><span>Tak</span></p>
-                    <p><a href="mailto:gusxkr4816@naver.com">TIKITAK@naver.com</a></p>
-                    <p><time datetime="2024-01-01T00:00:00">2024-01-01</time></p>
-                    <p><span>#java</span></p>
+                    <p><span id="nickname">Tak</span></p>
+                    <p><a id="email" href="mailto:gusxkr4816@naver.com">TIKITAK@naver.com</a></p>
+                    <p><time id="created-at" datetime="2024-01-01T00:00:00">2024-01-01</time></p>
+                    <p><span id="hashtag">#java</span></p>
                 </aside>
             </section>
 
-            <article class="col-md-7 col-lg-8">
+            <article id="article-content" class="col-md-7 col-lg-8">
                 <pre>본문<br><br></pre>
             </article>
         </div>
@@ -47,7 +50,7 @@
                     </div>
                 </form>
 
-                <ul class="row col-7">
+                <ul id="article-comments" class="row col-7">
                     <li>
                         <div>
                             <strong>Tak</strong>
@@ -83,7 +86,10 @@
         </nav>
     </main>
 
-    <footer id="footer"></footer>
+    <footer id="footer">
+        <hr>
+        footer 삽입부
+    </footer>
 
 </body>
 </html>
